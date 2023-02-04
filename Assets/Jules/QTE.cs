@@ -32,7 +32,7 @@ public class QTE : MonoBehaviour
     private int increment;
     private string gamepadName;
 
-    private bool hasSucceeded;
+    public bool hasSucceeded;
 
     // Start is called before the first frame update
     void Start()
@@ -124,6 +124,12 @@ public class QTE : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.A))
+        {
+            GenerateSequence();
+            increment = 0;
+            hasSucceeded = false;
+        }
         Debug.Log("player index : " + indexPlayer + " has touched : "+ Hinput.gamepad[indexPlayer].X.justReleased);
         if (hasSucceeded == false)
         {
@@ -205,42 +211,40 @@ public class QTE : MonoBehaviour
         }
         else
         {
-            //Launch next step !!!!!!!!!!!!!!!
+            ///////////////
         }
-
-
-
-        void KeyPressing()
+        
+    }
+    void KeyPressing()
+    {
+        /////////////////
+        QTEGen = 5;
+        switch (CorrectKey)
         {
-            /////////////////
-            QTEGen = 5;
-            switch (CorrectKey)
-            {
-                case 1 :
-                    Debug.Log("reussi   index : " + indexPlayer);
-                    QTEOrderList[increment].GameObject().SetActive(false);
-                    //PassBox.GetComponent<TextMeshProUGUI>().text = "PASS !!";
-                    CorrectKey = 0;
-                    increment += 1;
-                    if (increment >= 4)
-                    {
-                        hasSucceeded = true;
-                    }
-                    break;
+            case 1 :
+                Debug.Log("reussi   index : " + indexPlayer);
+                QTEOrderList[increment].GameObject().SetActive(false);
+                //PassBox.GetComponent<TextMeshProUGUI>().text = "PASS !!";
+                CorrectKey = 0;
+                increment += 1;
+                if (increment >= 4)
+                {
+                    hasSucceeded = true;
+                }
+                break;
                 
-                case 2 :
-                    //PassBox.GetComponent<TextMeshProUGUI>().text = "FAIL !!";
-                    //yield return new WaitForSeconds(1.5f);
-                    CorrectKey = 0;
-                    /*PassBox.GetComponent<TextMeshProUGUI>().text = "";
-                    DisplayBox.GetComponent<TextMeshProUGUI>().text = "";
-                    yield return new WaitForSeconds(1.5f);
-                    GenerateInput(); */
+            case 2 :
+                //PassBox.GetComponent<TextMeshProUGUI>().text = "FAIL !!";
+                //yield return new WaitForSeconds(1.5f);
+                CorrectKey = 0;
+                /*PassBox.GetComponent<TextMeshProUGUI>().text = "";
+                DisplayBox.GetComponent<TextMeshProUGUI>().text = "";
+                yield return new WaitForSeconds(1.5f);
+                GenerateInput(); */
                 
-                    GenerateSequence();
-                    increment = 0;
-                    break;
-            }
+                GenerateSequence();
+                increment = 0;
+                break;
         }
     }
 }
