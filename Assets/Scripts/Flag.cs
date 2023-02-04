@@ -68,6 +68,9 @@ public class Flag : MonoBehaviour
         //Set player isCapturing to false
         player.isCapturing = false;
         
+        playerCapture.arbre = transform.position;
+        playerCapture.InitSpline(transform.position);
+        
         //Set delay
         SetDelay();
         

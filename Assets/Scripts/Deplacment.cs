@@ -27,7 +27,7 @@ public class Deplacment : MonoBehaviour
     public float rotationSpeed = 10f;
     public bool isCapturing;
 
-    private Vector3 arbre;
+    public Vector3 arbre;
     private Vector3 rando;
     
     public float maxDelay = 1f;
@@ -54,14 +54,14 @@ public class Deplacment : MonoBehaviour
         {
             arbre = midlemen.Arbre2;
         }
-        InitSpline();
+        InitSpline(arbre);
     }
 
-    private void InitSpline()
+    public void InitSpline(Vector3 startPos)
     {
         //Instantiate a spline
-        Debug.Log(arbre);
-        GameObject obj = Instantiate(splinePrefab, arbre, Quaternion.identity);
+        
+        GameObject obj = Instantiate(splinePrefab, startPos, Quaternion.identity);
         lastSpline = obj.GetComponent<Spline>();
         
         rando = Random.insideUnitSphere * 0.5f;
@@ -96,7 +96,7 @@ public class Deplacment : MonoBehaviour
             if (rb.velocity.magnitude > 0.1f && !isCapturing)
             {
                 speed = speed * speedReduction;
-                if(speed < 0.1f)
+                if(speed < 0.5f)
                 {
                     ResetPositionToArbre();
                 }
@@ -139,36 +139,55 @@ public class Deplacment : MonoBehaviour
     void InstantiateColliderPoint()
     {
         //instanciate with a delay of 1 second a colliderPoint
-        GameObject obj = Instantiate(colliderPoint, transform.position, Quaternion.identity);
+        //GameObject obj = Instantiate(colliderPoint, transform.position, Quaternion.identity);
         AddSplineNode();
         
         //Set the tag of obj of player 1or 2
         if (idPlayer == 1)
         {
-            obj.tag = "Player1";
+            //obj.tag = "Player1";
         }
         else if (idPlayer == 2)
         {
-            obj.tag = "Player2";
+            //obj.tag = "Player2";
         }
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         //Set the player position to arbre 1 or 2
-        if (other.transform.CompareTag("Player2") )
+        if (other.transform.CompareTag("Player2") && idPlayer == 1)
         {
             ResetPositionToArbre();
+            if (idPlayer == 1)
+            {
+                arbre = midlemen.Arbre1;
+            
+            }
+            else if (idPlayer == 2)
+            {
+                arbre = midlemen.Arbre2;
+            }
             //InstantiateColliderPoint();
         }
-        else if (other.transform.CompareTag("Player1"))
+        else if (other.transform.CompareTag("Player1") && idPlayer == 2)
         {
             ResetPositionToArbre();
+            if (idPlayer == 1)
+            {
+                arbre = midlemen.Arbre1;
+            
+            }
+            else if (idPlayer == 2)
+            {
+                arbre = midlemen.Arbre2;
+            }
             //InstantiateColliderPoint();
         }
+        
     }
     
-    private void ResetPositionToArbre()
+    public void ResetPositionToArbre()
     {
         if (idPlayer == 1)
         {
@@ -180,7 +199,7 @@ public class Deplacment : MonoBehaviour
             transform.position = midlemen.Arbre2;
         }
         speed = speedMax;
-        InitSpline();
+        InitSpline(arbre);
     }
     
     
