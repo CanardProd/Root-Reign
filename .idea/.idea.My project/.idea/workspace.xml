@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="32c269af-7721-4a3c-a19d-c447d46e9fba" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.My project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.My project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations_Léo.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations_Léo.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Particle VFX/Materials/VFX_Getting_Weapon_Empty_mat.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particle VFX/Materials/VFX_Getting_Weapon_Empty_mat.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/HUD.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/HUD.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script_Léo/Score.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script_Léo/Score.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Jules/QTE.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Jules/QTE.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flag.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Flag.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +90,7 @@
       <workItem from="1675502578472" duration="7522000" />
       <workItem from="1675511246570" duration="11408000" />
       <workItem from="1675528364008" duration="7653000" />
-      <workItem from="1675547991703" duration="193000" />
+      <workItem from="1675547991703" duration="2714000" />
     </task>
     <servers />
   </component>
