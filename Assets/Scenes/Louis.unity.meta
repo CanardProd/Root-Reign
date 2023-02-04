@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/Louis.unity.meta
 guid: 7fa04aacd4a1a86449ccebc8849934bc
+========
+guid: 6c33ba84584431b4d9de18ac63a09f7c
+>>>>>>>> origin/Léo:Assets/Scenes/HUD.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

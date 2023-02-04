@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e8c7a933543ae448cdf079f529f90f, type: 3}
   m_Name: New Midlemen
   m_EditorClassIdentifier: 
-  Arbre1: {fileID: 0}
-  Arbre2: {fileID: 0}
-  scorePlayer1: 0
-  scorePlayer2: 0
+  Arbre1: {x: 0, y: 0, z: 0}
+  Arbre2: {x: 0, y: 0, z: 0}
+  scorePlayer1: 40.4
+  scorePlayer2: 36
   Player1: {fileID: 2100000, guid: e12d81acd8ff50845824e7eb5afa8a3c, type: 2}
   Player2: {fileID: 2100000, guid: f3f13be8d92d0fb449864530e7503f04, type: 2}

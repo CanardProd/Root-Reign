@@ -1,9 +1,14 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Hinput/XInput/x86_64.meta
 guid: 89817a50c0642184d9b45d6f8c1ced94
 folderAsset: yes
 timeCreated: 1491639509
+========
+guid: d82c1b31c7e74239bff1220585707d2b
+timeCreated: 1425440388
+>>>>>>>> origin/Léo:Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt.meta
 licenseType: Store
-DefaultImporter:
+TextScriptImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 

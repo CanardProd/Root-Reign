@@ -1,0 +1,44 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Timer : MonoBehaviour
+{
+    public float timerDuration = 120f; // Durée du timer en secondes
+    private float timerValue;
+    public Text timerText;
+    public Animator animator; // Référence à l'Animator
+    private bool timerIsRunning = true;
+
+    private void Start()
+    {
+        timerValue = timerDuration;
+    }
+
+    private void Update()
+    {
+        if (timerIsRunning)
+        {
+            timerValue -= Time.deltaTime;
+            int minutes = Mathf.FloorToInt(timerValue / 60);
+            int seconds = Mathf.FloorToInt(timerValue % 60);
+
+            timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+            if (timerValue <= 30f && !animator.GetBool("lastSecond"))
+            {
+                animator.SetBool("lastSecond", true);
+            }
+
+            if (timerValue <= 1f && !animator.GetBool("endChrono"))
+            {
+                timerIsRunning = false;
+                animator.SetBool("endChrono", true);
+                // Déclenchez l'événement "game over" ici
+            }
+        }
+    }
+}
+
+
+
+
