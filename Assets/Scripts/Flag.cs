@@ -28,7 +28,7 @@ public class Flag : MonoBehaviour
             {
                 other.GetComponent<Deplacment>().isCapturing = true;
                 transform.GetComponent<QTE>().indexPlayer = other.GetComponent<Deplacment>().indexPlayer;
-                transform.GetComponent<QTE>().indexPlayer.GenerateSequence();
+                transform.GetComponent<QTE>().GenerateSequence();
             }
         }
     }

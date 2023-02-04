@@ -131,7 +131,7 @@ public class QTE : MonoBehaviour
             hasSucceeded = false;
         }
         Debug.Log("player index : " + indexPlayer + " has touched : "+ Hinput.gamepad[indexPlayer].X.justReleased);
-        if (hasSucceeded == false && QTEOrderList.Count > 0)
+        if (hasSucceeded == false && QTEGenList.Count > 0)
         {
             switch (QTEGenList[increment])
             {
