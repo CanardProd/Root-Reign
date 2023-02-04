@@ -42,7 +42,7 @@ public class QTE : MonoBehaviour
        //Debug.Log("player index : " + indexPlayer + " enabled : "+ Hinput.gamepad[indexPlayer].isEnabled);
        myGp = Hinput.gamepad[indexPlayer];
        gamepadName = myGp.name;
-       Debug.Log(gamepadName);
+       //Debug.Log(gamepadName);
 
 
        hasSucceeded = false;
@@ -131,9 +131,8 @@ public class QTE : MonoBehaviour
             hasSucceeded = false;
         }
         Debug.Log("player index : " + indexPlayer + " has touched : "+ Hinput.gamepad[indexPlayer].X.justReleased);
-        if (hasSucceeded == false)
+        if (hasSucceeded == false && QTEOrderList.Count > 0)
         {
-            
             switch (QTEGenList[increment])
             {
                 case 1:
@@ -206,6 +205,10 @@ public class QTE : MonoBehaviour
                             KeyPressing();
                         }
                     }
+                    break;
+                
+                default:
+                    Debug.Log("Default");
                     break;
             }
         }
