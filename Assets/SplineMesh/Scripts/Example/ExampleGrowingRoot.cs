@@ -35,13 +35,13 @@ namespace SplineMesh {
             rate = 0;
             Init();
 #if UNITY_EDITOR
-            EditorApplication.update += EditorUpdate;
+            //EditorApplication.update += EditorUpdate;
 #endif
         }
 
         void OnDisable() {
 #if UNITY_EDITOR
-            EditorApplication.update -= EditorUpdate;
+            //EditorApplication.update -= EditorUpdate;
 #endif
         }
 
@@ -54,9 +54,11 @@ namespace SplineMesh {
         }
 
         void EditorUpdate() {
-            rate += Time.deltaTime / DurationInSecond;
+            if(rate <= 1)
+                rate += Time.deltaTime / DurationInSecond;
+            
             if (rate > 1) {
-                rate --;
+                //rate --;
             }
             Contort();
         }

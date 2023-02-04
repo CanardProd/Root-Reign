@@ -6,8 +6,8 @@ using UnityEngine.SocialPlatforms.Impl;
 [CreateAssetMenu(fileName = "New Midlemen", menuName = "Midlemen")]
 public class SO_Midlemen : ScriptableObject
 {
-    public Transform Arbre1;
-    public Transform Arbre2;
+    public Vector3 Arbre1;
+    public Vector3 Arbre2;
 
     public float scorePlayer1;
     public float scorePlayer2;
@@ -38,8 +38,8 @@ public class SO_Midlemen : ScriptableObject
         scorePlayer1 = 0;
         scorePlayer2 = 0;
         
-        Arbre1 = GameObject.Find("Arbre1").transform;
-        Arbre2 = GameObject.Find("Arbre2").transform;
+        Arbre1 = GameObject.Find("Arbre1").transform.position;
+        Arbre2 = GameObject.Find("Arbre2").transform.position;
     }
     
     //Add Score to player 1 or 2

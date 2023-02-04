@@ -1,17 +1,22 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using SplineMesh;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Deplacment : MonoBehaviour
 {
     [Header("Components")]
     public Rigidbody rb;
     public Transform direction;
+    public Spline lastSpline;
     
     [Header("Data")]
     public SO_Midlemen midlemen;
     public GameObject colliderPoint;
+    public GameObject splinePrefab;
     
     [Header("Variables")]
     public int idPlayer;
@@ -21,6 +26,9 @@ public class Deplacment : MonoBehaviour
     public float speedReduction;
     public float rotationSpeed = 10f;
     public bool isCapturing;
+
+    private Vector3 arbre;
+    private Vector3 rando;
     
     public float maxDelay = 1f;
     private float tempMaxDelay = 1f;
@@ -35,6 +43,40 @@ public class Deplacment : MonoBehaviour
         delay = maxDelay;
         tempMaxDelay = maxDelay;
         speed = speedMax;
+        
+        
+        if (idPlayer == 1)
+        {
+            arbre = midlemen.Arbre1;
+            
+        }
+        else if (idPlayer == 2)
+        {
+            arbre = midlemen.Arbre2;
+        }
+        InitSpline();
+    }
+
+    private void InitSpline()
+    {
+        //Instantiate a spline
+        Debug.Log(arbre);
+        GameObject obj = Instantiate(splinePrefab, arbre, Quaternion.identity);
+        lastSpline = obj.GetComponent<Spline>();
+        
+        rando = Random.insideUnitSphere * 0.5f;
+        SplineNode node = new SplineNode(Vector3.zero, transform.position - arbre);
+        
+        SplineNode node1 = new SplineNode(transform.position- (arbre + rando), transform.position- (arbre + rando));
+        lastSpline.nodes[0] = node;
+        lastSpline.nodes[1] = node1;
+    }
+
+    private void AddSplineNode()
+    {
+        rando = Random.insideUnitSphere * 0.5f;
+        SplineNode node = new SplineNode(transform.position- (arbre + rando), transform.position- (arbre + rando));
+        lastSpline.AddNode(node);
     }
 
     // Update is called once per frame
@@ -98,6 +140,7 @@ public class Deplacment : MonoBehaviour
     {
         //instanciate with a delay of 1 second a colliderPoint
         GameObject obj = Instantiate(colliderPoint, transform.position, Quaternion.identity);
+        AddSplineNode();
         
         //Set the tag of obj of player 1or 2
         if (idPlayer == 1)
@@ -129,13 +172,16 @@ public class Deplacment : MonoBehaviour
     {
         if (idPlayer == 1)
         {
-            transform.position = midlemen.Arbre1.position;
+            transform.position = midlemen.Arbre1;
             
         }
         else if (idPlayer == 2)
         {
-            transform.position = midlemen.Arbre2.position;
+            transform.position = midlemen.Arbre2;
         }
         speed = speedMax;
+        InitSpline();
     }
+    
+    
 }
