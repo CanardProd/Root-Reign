@@ -44,6 +44,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Depth: 7.74
+    - _Depth_Fade: 1
     - _Displacement: 0.05
     - _Foam_Depth: 0.2
     - _Foam_Noise_Scale: 4.03
@@ -52,7 +53,7 @@ Material:
     - _QueueControl: 1
     - _QueueOffset: 0
     - _Smoothness: 0.85
-    - _Strength: 0.25
+    - _Strength: 0.4
     m_Colors:
     - _Deep_Water_Color: {r: 0.07186719, g: 0.61892205, b: 0.8018868, a: 0.92941177}
     - _Foam_Color: {r: 1, g: 1, b: 1, a: 0}
