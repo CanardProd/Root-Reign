@@ -1,9 +1,14 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Hinput/XInput/x86.meta
 guid: 56566c4453c50ea41a86731f4fa99035
 folderAsset: yes
 timeCreated: 1491639509
+========
+guid: fade42e8bc714b018fac513c043d323b
+timeCreated: 1425440388
+>>>>>>>> origin/Léo:Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt.meta
 licenseType: Store
-DefaultImporter:
+TextScriptImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
