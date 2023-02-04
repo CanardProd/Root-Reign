@@ -26,18 +26,22 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _noise_output:
         m_Texture: {fileID: 2800000, guid: a6a2602821d38c84898d52c604c5adb1, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 2.56, y: 0}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _AlphaCutoff: 0.5
     - _Float0: 0.01
     - _Float1: 1024
-    - _VariationScale: 520.5
+    - _VariationScale: 28.7
+    - _WindInfluceMASKY: 4.28
     - _WindScale: 1024
+    - _WindStrenght: 0.16
     - _windpower: 0.01
+    - _windspeeeeeed: 0
     m_Colors:
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Vector0: {r: 0, g: 0, b: 0, a: 0}
+    - _Vector0: {r: 0.7, g: 0, b: 0, a: 0}
+    - _WindDirection: {r: 1.43, g: 0, b: 0, a: 0}
     - _WindSpeed: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
