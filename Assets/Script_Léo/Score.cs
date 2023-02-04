@@ -3,17 +3,17 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
+    
+    public SO_Midlemen midlemen;
     [Header("                                           ---Slider Rouge---")]
     public Slider sliderRed;
-    public int scoreRed = 100;
 
     [Header("                                           ---Slider Bleu---")]
     public Slider sliderBlue;
-    public int scoreBlue = 50;
 
     private void Update()
     {
-        sliderRed.value = scoreRed;
-        sliderBlue.value = scoreBlue;
+        sliderRed.value = midlemen.scorePlayer1;
+        sliderBlue.value = midlemen.scorePlayer2;
     }
 }

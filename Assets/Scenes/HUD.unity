@@ -1350,10 +1350,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ccaaaf098be46146be81c35d8773f28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  midlemen: {fileID: 11400000, guid: 48095eed5e87f97468584ebfbaa13a33, type: 2}
   sliderRed: {fileID: 103680461}
-  scoreRed: 0
   sliderBlue: {fileID: 96105523}
-  scoreBlue: 0
 --- !u!114 &1045572184
 MonoBehaviour:
   m_ObjectHideFlags: 0
