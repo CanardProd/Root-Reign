@@ -6,6 +6,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+
 public class Deplacment : MonoBehaviour
 {
     [Header("Components")]
@@ -33,8 +34,8 @@ public class Deplacment : MonoBehaviour
     public float maxDelay = 1f;
     private float tempMaxDelay = 1f;
     public float delay = 1f;
-    
-    
+
+    public int indexPlayer;
     
     // Start is called before the first frame update
     void Start()
@@ -133,7 +134,7 @@ public class Deplacment : MonoBehaviour
     void SetDirection()
     {
         //Rotate transformDirection from input controller
-        direction.Rotate(0, Input.GetAxis("Horizontal") * rotationSpeed, 0);
+        direction.Rotate(0, Hinput.gamepad[indexPlayer].leftStick.horizontal * rotationSpeed, 0);
     }
 
     void InstantiateColliderPoint()
