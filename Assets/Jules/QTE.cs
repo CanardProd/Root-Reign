@@ -69,7 +69,7 @@ public class QTE : MonoBehaviour
 
         CreateList();
         /////////////////////////////////////////////
-        GenerateSequence();
+        //GenerateSequence();
     }
     
     void CreateList()
@@ -111,7 +111,7 @@ public class QTE : MonoBehaviour
         return currentGeneratedInput;
     }
 
-    void GenerateSequence()
+    public void GenerateSequence()
     {
         QTEGenList.Clear();
         for (int i = 0; i < 4; i++)
