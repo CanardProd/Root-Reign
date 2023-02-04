@@ -13,6 +13,8 @@ public class QTE : MonoBehaviour
     private Material blue;
 
     private Gamepad myGp;
+
+    private float vibrationLength;
     
     private bool hasPressedA;
 
@@ -30,11 +32,12 @@ public class QTE : MonoBehaviour
     private int increment;
     private string gamepadName;
 
-    private bool hasSucceeded;
+    public bool hasSucceeded;
 
     // Start is called before the first frame update
     void Start()
     {
+        vibrationLength = 0.2f;
        //Debug.Log("player index : " + indexPlayer + " connected : "+ Hinput.gamepad[indexPlayer].isConnected);
        //Debug.Log("player index : " + indexPlayer + " enabled : "+ Hinput.gamepad[indexPlayer].isEnabled);
        myGp = Hinput.gamepad[indexPlayer];
@@ -65,16 +68,10 @@ public class QTE : MonoBehaviour
         GetComponent<Renderer>().material = red;
 
         CreateList();
-
+        /////////////////////////////////////////////
         GenerateSequence();
     }
-
-
-    private void FixedUpdate()
-    {
-        if(Hinput.gamepad[indexPlayer].A.pressed)
-            Debug.Log("YO"); }
-
+    
     void CreateList()
     {
         QTEOrderList.Add(FirstBtn);
@@ -127,6 +124,12 @@ public class QTE : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.A))
+        {
+            GenerateSequence();
+            increment = 0;
+            hasSucceeded = false;
+        }
         Debug.Log("player index : " + indexPlayer + " has touched : "+ Hinput.gamepad[indexPlayer].X.justReleased);
         if (hasSucceeded == false)
         {
@@ -138,11 +141,13 @@ public class QTE : MonoBehaviour
                     {
                         if (Hinput.gamepad[indexPlayer].X.justReleased)
                         {
+                            Hinput.gamepad[indexPlayer].Vibrate(vibrationLength);
                             CorrectKey = 1;
                             KeyPressing();
                         }
                         else
                         {
+                            Hinput.gamepad[indexPlayer].Vibrate(vibrationLength);
                             CorrectKey = 2;
                             KeyPressing();
                         }
@@ -155,11 +160,13 @@ public class QTE : MonoBehaviour
                     {
                         if (Hinput.gamepad[indexPlayer].Y.justReleased)
                         {
+                            Hinput.gamepad[indexPlayer].Vibrate(vibrationLength);
                             CorrectKey = 1;
                             KeyPressing();
                         }
                         else
                         {
+                            Hinput.gamepad[indexPlayer].Vibrate(vibrationLength);
                             CorrectKey = 2;
                             KeyPressing();
                         }
@@ -171,11 +178,13 @@ public class QTE : MonoBehaviour
                     {
                         if (Hinput.gamepad[indexPlayer].B.justReleased)
                         {
+                            Hinput.gamepad[indexPlayer].Vibrate(vibrationLength);
                             CorrectKey = 1;
                             KeyPressing();
                         }
                         else
                         {
+                            Hinput.gamepad[indexPlayer].Vibrate(vibrationLength);
                             CorrectKey = 2;
                             KeyPressing();
                         }
@@ -186,11 +195,13 @@ public class QTE : MonoBehaviour
                     {
                         if (Hinput.gamepad[indexPlayer].A.justReleased)
                         {
+                            Hinput.gamepad[indexPlayer].Vibrate(vibrationLength);
                             CorrectKey = 1;
                             KeyPressing();
                         }
                         else
                         {
+                            Hinput.gamepad[indexPlayer].Vibrate(vibrationLength);
                             CorrectKey = 2;
                             KeyPressing();
                         }
@@ -200,42 +211,40 @@ public class QTE : MonoBehaviour
         }
         else
         {
-            //Launch next step !!!!!!!!!!!!!!!
+            ///////////////
         }
-
-
-
-        void KeyPressing()
+        
+    }
+    void KeyPressing()
+    {
+        /////////////////
+        QTEGen = 5;
+        switch (CorrectKey)
         {
-            /////////////////
-            QTEGen = 5;
-            switch (CorrectKey)
-            {
-                case 1 :
-                    Debug.Log("reussi   index : " + indexPlayer);
-                    QTEOrderList[increment].GameObject().SetActive(false);
-                    //PassBox.GetComponent<TextMeshProUGUI>().text = "PASS !!";
-                    CorrectKey = 0;
-                    increment += 1;
-                    if (increment >= 4)
-                    {
-                        hasSucceeded = true;
-                    }
-                    break;
+            case 1 :
+                Debug.Log("reussi   index : " + indexPlayer);
+                QTEOrderList[increment].GameObject().SetActive(false);
+                //PassBox.GetComponent<TextMeshProUGUI>().text = "PASS !!";
+                CorrectKey = 0;
+                increment += 1;
+                if (increment >= 4)
+                {
+                    hasSucceeded = true;
+                }
+                break;
                 
-                case 2 :
-                    //PassBox.GetComponent<TextMeshProUGUI>().text = "FAIL !!";
-                    //yield return new WaitForSeconds(1.5f);
-                    CorrectKey = 0;
-                    /*PassBox.GetComponent<TextMeshProUGUI>().text = "";
-                    DisplayBox.GetComponent<TextMeshProUGUI>().text = "";
-                    yield return new WaitForSeconds(1.5f);
-                    GenerateInput(); */
+            case 2 :
+                //PassBox.GetComponent<TextMeshProUGUI>().text = "FAIL !!";
+                //yield return new WaitForSeconds(1.5f);
+                CorrectKey = 0;
+                /*PassBox.GetComponent<TextMeshProUGUI>().text = "";
+                DisplayBox.GetComponent<TextMeshProUGUI>().text = "";
+                yield return new WaitForSeconds(1.5f);
+                GenerateInput(); */
                 
-                    GenerateSequence();
-                    increment = 0;
-                    break;
-            }
+                GenerateSequence();
+                increment = 0;
+                break;
         }
     }
 }
