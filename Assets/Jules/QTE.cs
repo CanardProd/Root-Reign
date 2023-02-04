@@ -13,6 +13,8 @@ public class QTE : MonoBehaviour
     private Material blue;
 
     private Gamepad myGp;
+
+    private float vibrationLength;
     
     private bool hasPressedA;
 
@@ -35,6 +37,7 @@ public class QTE : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        vibrationLength = 0.2f;
        //Debug.Log("player index : " + indexPlayer + " connected : "+ Hinput.gamepad[indexPlayer].isConnected);
        //Debug.Log("player index : " + indexPlayer + " enabled : "+ Hinput.gamepad[indexPlayer].isEnabled);
        myGp = Hinput.gamepad[indexPlayer];
@@ -65,16 +68,10 @@ public class QTE : MonoBehaviour
         GetComponent<Renderer>().material = red;
 
         CreateList();
-
+        /////////////////////////////////////////////
         GenerateSequence();
     }
-
-
-    private void FixedUpdate()
-    {
-        if(Hinput.gamepad[indexPlayer].A.pressed)
-            Debug.Log("YO"); }
-
+    
     void CreateList()
     {
         QTEOrderList.Add(FirstBtn);
@@ -138,11 +135,13 @@ public class QTE : MonoBehaviour
                     {
                         if (Hinput.gamepad[indexPlayer].X.justReleased)
                         {
+                            Hinput.gamepad[indexPlayer].Vibrate(vibrationLength);
                             CorrectKey = 1;
                             KeyPressing();
                         }
                         else
                         {
+                            Hinput.gamepad[indexPlayer].Vibrate(vibrationLength);
                             CorrectKey = 2;
                             KeyPressing();
                         }
@@ -155,11 +154,13 @@ public class QTE : MonoBehaviour
                     {
                         if (Hinput.gamepad[indexPlayer].Y.justReleased)
                         {
+                            Hinput.gamepad[indexPlayer].Vibrate(vibrationLength);
                             CorrectKey = 1;
                             KeyPressing();
                         }
                         else
                         {
+                            Hinput.gamepad[indexPlayer].Vibrate(vibrationLength);
                             CorrectKey = 2;
                             KeyPressing();
                         }
@@ -171,11 +172,13 @@ public class QTE : MonoBehaviour
                     {
                         if (Hinput.gamepad[indexPlayer].B.justReleased)
                         {
+                            Hinput.gamepad[indexPlayer].Vibrate(vibrationLength);
                             CorrectKey = 1;
                             KeyPressing();
                         }
                         else
                         {
+                            Hinput.gamepad[indexPlayer].Vibrate(vibrationLength);
                             CorrectKey = 2;
                             KeyPressing();
                         }
@@ -186,11 +189,13 @@ public class QTE : MonoBehaviour
                     {
                         if (Hinput.gamepad[indexPlayer].A.justReleased)
                         {
+                            Hinput.gamepad[indexPlayer].Vibrate(vibrationLength);
                             CorrectKey = 1;
                             KeyPressing();
                         }
                         else
                         {
+                            Hinput.gamepad[indexPlayer].Vibrate(vibrationLength);
                             CorrectKey = 2;
                             KeyPressing();
                         }
