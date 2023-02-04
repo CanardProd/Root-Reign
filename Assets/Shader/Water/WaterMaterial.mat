@@ -46,12 +46,17 @@ Material:
     - _Depth: 7.74
     - _Depth_Fade: 1
     - _Displacement: 0.05
+    - _Foam_Amount: 4
     - _Foam_Depth: 0.2
     - _Foam_Noise_Scale: 4.03
     - _Foam_Ripple_Speed: 3.83
+    - _Foam_Scale: 30.21
+    - _Foam_Speed: 0.5
     - _Normal_Strength: 1
     - _QueueControl: 1
     - _QueueOffset: 0
+    - _Ripple_Density: 1
+    - _Ripple_Speed: 1
     - _Smoothness: 0.85
     - _Strength: 0.4
     m_Colors:
