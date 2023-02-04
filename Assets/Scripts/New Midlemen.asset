@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e8c7a933543ae448cdf079f529f90f, type: 3}
+  m_Name: New Midlemen
+  m_EditorClassIdentifier: 
+  Arbre1: {fileID: 0}
+  Arbre2: {fileID: 0}
+  scorePlayer1: 0
+  scorePlayer2: 0
+  Player1: {fileID: 2100000, guid: e12d81acd8ff50845824e7eb5afa8a3c, type: 2}
+  Player2: {fileID: 2100000, guid: f3f13be8d92d0fb449864530e7503f04, type: 2}
