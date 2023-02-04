@@ -38,7 +38,7 @@ public class Flag : MonoBehaviour
             if (playerCapture != other.GetComponent<Deplacment>())
             {
                 playerCapture = other.GetComponent<Deplacment>();
-                StartCoroutine(DelayAddScore(playerCapture));
+                AddScore(playerCapture);
             }
         }
     }
@@ -56,25 +56,28 @@ public class Flag : MonoBehaviour
         }
     }
     
-    IEnumerator DelayAddScore(Deplacment player)
+    void AddScore(Deplacment player)
     {
-        yield return new WaitForSeconds(delay);
-        //add score to player 1
-        midlemen.AddScore(player.idPlayer);
+        if (transform.GetComponent<QTE>().hasSucceeded)
+        {
+            //add score to player 1
+            midlemen.AddScore(player.idPlayer);
         
-        //Set isCapture to true
-        isCapture = true;
+            //Set isCapture to true
+            isCapture = true;
         
-        //Set player isCapturing to false
-        player.isCapturing = false;
+            //Set player isCapturing to false
+            player.isCapturing = false;
         
-        playerCapture.arbre = transform.position;
-        playerCapture.InitSpline(transform.position);
+            playerCapture.arbre = transform.position;
+            playerCapture.InitSpline(transform.position);
         
-        //Set delay
-        SetDelay();
+            //Set delay
+            SetDelay();
         
-        //Change material of flag
-        GetComponent<MeshRenderer>().material = midlemen.GetMaterial(player.idPlayer);
+            //Change material of flag
+            GetComponent<MeshRenderer>().material = midlemen.GetMaterial(player.idPlayer);
+        }
+        
     }
 }
