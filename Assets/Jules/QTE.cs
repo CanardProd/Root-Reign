@@ -171,7 +171,6 @@ public class QTE : MonoBehaviour
                     {
                         if (Hinput.gamepad[indexPlayer].B.justReleased)
                         {
-                          
                             CorrectKey = 1;
                             KeyPressing();
                         }
