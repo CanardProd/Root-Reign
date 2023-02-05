@@ -50,25 +50,25 @@ MonoBehaviour:
   - position: {x: 0, y: 0, z: 0}
     direction: {x: 0, y: 0, z: 0.07044663}
     up: {x: 0, y: 1, z: 0}
-    scale: {x: 0.64815855, y: 0.64815855}
+    scale: {x: 0.3980674, y: 0.3980674}
     roll: 0
   - position: {x: 0, y: 0, z: 0.4696442}
     direction: {x: 0, y: 0, z: 0.5400908}
     up: {x: 0, y: 1, z: 0}
-    scale: {x: 0.04815853, y: 0.04815853}
+    scale: {x: 0.098067395, y: 0.098067395}
     roll: 0
   curves:
   - n1:
       position: {x: 0, y: 0, z: 0}
       direction: {x: 0, y: 0, z: 0.07044663}
       up: {x: 0, y: 1, z: 0}
-      scale: {x: 0.64815855, y: 0.64815855}
+      scale: {x: 0.3980674, y: 0.3980674}
       roll: 0
     n2:
       position: {x: 0, y: 0, z: 0.4696442}
       direction: {x: 0, y: 0, z: 0.5400908}
       up: {x: 0, y: 1, z: 0}
-      scale: {x: 0.04815853, y: 0.04815853}
+      scale: {x: 0.098067395, y: 0.098067395}
       roll: 0
     Changed:
       m_PersistentCalls:
@@ -94,7 +94,7 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 5d32ac4b8dd925c418ba969e2594582b, type: 2}
   rotation: {x: 0, y: 90, z: 0}
   scale: {x: 1, y: 1, z: 1}
-  startScale: 0.6
+  startScale: 0.3
   DurationInSecond: 0.5
 --- !u!1 &5614839115403588497
 GameObject:
