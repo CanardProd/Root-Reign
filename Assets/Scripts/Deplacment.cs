@@ -91,7 +91,7 @@ public class Deplacment : MonoBehaviour
         }
         if(delay <= 0)
         {
-            tempMaxDelay *= 1+ (1-speedReduction);
+            tempMaxDelay = 10f;
             delay = tempMaxDelay;
             InstantiateColliderPoint();
             if (rb.velocity.magnitude > 0.1f && !isCapturing)
@@ -120,14 +120,14 @@ public class Deplacment : MonoBehaviour
     
     void Deplacement()
     {
-        //add velocity to rigidbody
-        if (!isCapturing)
+        if (!isCapturing || !midlemen.isPaused)
         {
             rb.velocity = direction.right * speed;
         }
         else
         {
-            rb.velocity = Vector3.zero;
+            Debug.Log("IS CAPTURING");
+            speed = 0;
         }
     }
 
@@ -139,19 +139,21 @@ public class Deplacment : MonoBehaviour
 
     void InstantiateColliderPoint()
     {
-        //instanciate with a delay of 1 second a colliderPoint
-        //GameObject obj = Instantiate(colliderPoint, transform.position, Quaternion.identity);
         AddSplineNode();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.CompareTag("Player2") || collision.transform.CompareTag("Player1"))
+        {
+            transform.GetComponent<SphereCollider>().isTrigger = true;
+        }
         
-        //Set the tag of obj of player 1or 2
-        if (idPlayer == 1)
-        {
-            //obj.tag = "Player1";
-        }
-        else if (idPlayer == 2)
-        {
-            //obj.tag = "Player2";
-        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        transform.GetComponent<SphereCollider>().isTrigger = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -159,7 +161,7 @@ public class Deplacment : MonoBehaviour
         //Set the player position to arbre 1 or 2
         if (other.transform.CompareTag("Player2") && idPlayer == 1)
         {
-            ResetPositionToArbre();
+            
             if (idPlayer == 1)
             {
                 arbre = midlemen.Arbre1;
@@ -170,10 +172,11 @@ public class Deplacment : MonoBehaviour
                 arbre = midlemen.Arbre2;
             }
             //InstantiateColliderPoint();
+            ResetPositionToArbre();
         }
         else if (other.transform.CompareTag("Player1") && idPlayer == 2)
         {
-            ResetPositionToArbre();
+            
             if (idPlayer == 1)
             {
                 arbre = midlemen.Arbre1;
@@ -184,6 +187,7 @@ public class Deplacment : MonoBehaviour
                 arbre = midlemen.Arbre2;
             }
             //InstantiateColliderPoint();
+            ResetPositionToArbre();
         }
         
     }

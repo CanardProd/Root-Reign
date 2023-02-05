@@ -76,7 +76,7 @@ namespace SplineMesh {
             }
 
             if (generated != null) {
-                meshBender.SetInterval(spline, 0, spline.Length * rate);
+                meshBender.SetInterval(spline, 0, spline.Length * DurationInSecond);
                 meshBender.ComputeIfNeeded();
             }
         }

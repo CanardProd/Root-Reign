@@ -8,6 +8,8 @@ public class Timer : MonoBehaviour
     public Text timerText;
     public Animator animator; // Référence à l'Animator
     private bool timerIsRunning = true;
+    
+    public SO_Midlemen midlemen;
 
     private void Start()
     {
@@ -19,6 +21,7 @@ public class Timer : MonoBehaviour
         if (timerIsRunning)
         {
             timerValue -= Time.deltaTime;
+            midlemen.timer = timerValue;
             int minutes = Mathf.FloorToInt(timerValue / 60);
             int seconds = Mathf.FloorToInt(timerValue % 60);
 

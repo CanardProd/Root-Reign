@@ -16987,6 +16987,7 @@ GameObject:
   - component: {fileID: 342442805}
   - component: {fileID: 342442804}
   - component: {fileID: 342442803}
+  - component: {fileID: 342442807}
   m_Layer: 5
   m_Name: Canva_Intro
   m_TagString: Untagged
@@ -17102,6 +17103,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &342442807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342442801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c4bc85819e13a94db690adf1c05e47c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  midlemen: {fileID: 11400000, guid: 48095eed5e87f97468584ebfbaa13a33, type: 2}
 --- !u!1001 &342703663
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18244,7 +18258,7 @@ GameObject:
   - component: {fileID: 366880672}
   m_Layer: 0
   m_Name: '[PH]PropsAEnraciner'
-  m_TagString: Untagged
+  m_TagString: Flag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18260,7 +18274,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 2, y: 5, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &366880667
 MeshRenderer:
@@ -48090,7 +48104,7 @@ MonoBehaviour:
   isCapturing: 0
   arbre: {x: 0, y: 0, z: 0}
   maxDelay: 0.5
-  delay: 1
+  delay: 0.2
   indexPlayer: 0
 --- !u!4 &949102738
 Transform:
@@ -53318,6 +53332,7 @@ MonoBehaviour:
   timerDuration: 45
   timerText: {fileID: 749840823}
   animator: {fileID: 749840825}
+  midlemen: {fileID: 11400000, guid: 48095eed5e87f97468584ebfbaa13a33, type: 2}
 --- !u!1001 &1046192142
 PrefabInstance:
   m_ObjectHideFlags: 0

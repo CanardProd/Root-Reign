@@ -43,11 +43,16 @@ public class Flag : MonoBehaviour
             {
                 if(playerCapture != other.GetComponent<Deplacment>())
                 {
+                    other.GetComponent<Deplacment>().isCapturing = false;
                     Debug.Log("Player is capturing");
                     playerCapture = other.GetComponent<Deplacment>();
                     AddScore(playerCapture);
                     transform.GetComponent<QTE>().ResetFlag();
                 }
+            }
+            else
+            {
+                other.GetComponent<Deplacment>().isCapturing = true;
             }
         }
     }

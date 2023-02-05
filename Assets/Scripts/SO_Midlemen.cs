@@ -11,6 +11,9 @@ public class SO_Midlemen : ScriptableObject
 
     public float scorePlayer1;
     public float scorePlayer2;
+
+    public bool isPaused = false;
+    public float timer;
     
     public Material Player1;
     public Material Player2;
