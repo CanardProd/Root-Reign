@@ -40,8 +40,7 @@ MonoBehaviour:
       type: 3}
   m_RendererFeatures:
   - {fileID: -1878332245247344467}
-  - {fileID: 6125106327351877817}
-  m_RendererFeatureMap: adc0de57c6d2eee5b9604ea5c0bf0055
+  m_RendererFeatureMap: adc0de57c6d2eee5
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -97,13 +96,15 @@ MonoBehaviour:
   m_Active: 1
   renderPassEvent: 300
   outlinesLayerMask:
-    serializedVersion: 2
     m_Bits: 128
   outlinesOccluderLayerMask:
-    serializedVersion: 2
     m_Bits: 512
   outlineSettings:
-    outlineColor: {r: 1, g: 1, b: 0.8352941, a: 1}
+    outlineColor:
+      r: 1
+      g: 1
+      b: 0.8352941
+      a: 1
     outlineScale: 0.5
     depthThreshold: 1.5
     robertsCrossMultiplier: 100
@@ -114,7 +115,11 @@ MonoBehaviour:
     colorFormat: 0
     depthBufferBits: 16
     filterMode: 0
-    backgroundColor: {r: 0, g: 0, b: 0, a: 0}
+    backgroundColor:
+      r: 0
+      g: 0
+      b: 0
+      a: 0
     perObjectData: 0
     enableDynamicBatching: 0
     enableInstancing: 0
