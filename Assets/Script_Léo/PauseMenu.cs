@@ -27,7 +27,7 @@ public class PauseMenu : MonoBehaviour
             lastEscapePressTime = Time.time;
         }
 
-        if (Hinput.anyGamepad.start && Time.time - lastEscapePressTime > escapePressDelay)
+        if (Hinput.anyGamepad.start.justReleased && Time.time - lastEscapePressTime > escapePressDelay)
         {
             if (GameIsPaused)
             { 
