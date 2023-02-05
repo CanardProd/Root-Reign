@@ -14,6 +14,11 @@ public class Flag : MonoBehaviour
     public float delayCapture = 1f;
     public SO_Midlemen midlemen;
 
+    public GameObject fxCapturePlayer1;
+    public GameObject fxCapturePlayer2;
+    
+    public GameObject tempObject;
+
 
     private void Start()
     {
@@ -98,7 +103,19 @@ public class Flag : MonoBehaviour
             SetDelay();
         
             //Change material of flag
-            GetComponent<MeshRenderer>().material = midlemen.GetMaterial(player.idPlayer);
+            //GetComponent<MeshRenderer>().material = midlemen.GetMaterial(player.idPlayer);
+            if(tempObject != null)
+                Destroy(tempObject);
+
+            if (player.idPlayer == 1)
+            {
+                tempObject = Instantiate(fxCapturePlayer1, transform.position, Quaternion.identity);
+            }
+            else if (player.idPlayer == 2)
+            {
+                tempObject = Instantiate(fxCapturePlayer2, transform.position, Quaternion.identity);
+            }
+            
         }
         
     }

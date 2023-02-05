@@ -37,6 +37,8 @@ public class Timer : MonoBehaviour
                 timerIsRunning = false;
                 animator.SetBool("endChrono", true);
                 // Déclenchez l'événement "game over" ici
+                
+                
             }
         }
     }
