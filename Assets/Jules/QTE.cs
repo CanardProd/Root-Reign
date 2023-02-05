@@ -170,6 +170,7 @@ public class QTE : MonoBehaviour
                             KeyPressing();
                         }
                     }
+
                     break;
 
                 case 3:
@@ -188,6 +189,7 @@ public class QTE : MonoBehaviour
                             KeyPressing();
                         }
                     }
+
                     break;
                 case 4:
                     if (Hinput.gamepad[indexPlayer].anyInput.justReleased)
@@ -205,46 +207,36 @@ public class QTE : MonoBehaviour
                             KeyPressing();
                         }
                     }
+
                     break;
-                
+
                 default:
                     Debug.Log("Default");
                     break;
             }
         }
-        else
-        {
-            ///////////////
-        }
-        
+
     }
     void KeyPressing()
     {
-        /////////////////
         QTEGen = 5;
         switch (CorrectKey)
         {
             case 1 :
-                Debug.Log("reussi   index : " + indexPlayer);
                 QTEOrderList[increment].GameObject().SetActive(false);
-                //PassBox.GetComponent<TextMeshProUGUI>().text = "PASS !!";
                 CorrectKey = 0;
+                // !!!!!! Son Click
                 increment += 1;
                 if (increment >= 4)
                 {
                     hasSucceeded = true;
+                    // !!!!!! Son item collect~~~~~~~~
                 }
                 break;
                 
             case 2 :
-                //PassBox.GetComponent<TextMeshProUGUI>().text = "FAIL !!";
-                //yield return new WaitForSeconds(1.5f);
+                // !!!!!! Son erreur
                 CorrectKey = 0;
-                /*PassBox.GetComponent<TextMeshProUGUI>().text = "";
-                DisplayBox.GetComponent<TextMeshProUGUI>().text = "";
-                yield return new WaitForSeconds(1.5f);
-                GenerateInput(); */
-                
                 GenerateSequence();
                 increment = 0;
                 break;
