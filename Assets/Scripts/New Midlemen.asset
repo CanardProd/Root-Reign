@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e8c7a933543ae448cdf079f529f90f, type: 3}
   m_Name: New Midlemen
   m_EditorClassIdentifier: 
-  Arbre1: {x: -31.72, y: 1.54, z: -8.92}
-  Arbre2: {x: 5.2510448, y: 1.54, z: -9.242563}
+  Arbre1: {x: -31.75, y: 1.135, z: -9.242563}
+  Arbre2: {x: 5.05, y: 1.54, z: -8.92}
   scorePlayer1: 0
   scorePlayer2: 0
-  isPaused: 1
-  timer: 35.008846
+  shakeDuration: 0
+  isPaused: 0
+  timer: 107.6039
   Player1: {fileID: 2100000, guid: e12d81acd8ff50845824e7eb5afa8a3c, type: 2}
   Player2: {fileID: 2100000, guid: f3f13be8d92d0fb449864530e7503f04, type: 2}

@@ -57,6 +57,6 @@ public class AudioManager : MonoBehaviour
     }
     public void PlayClicSound()
     {
-        audioSourceEffect.PlayOneShot(clicSound, effectVolume);
+        //audioSourceEffect.PlayOneShot(clicSound, effectVolume);
     }
 }

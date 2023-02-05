@@ -17,6 +17,7 @@ public class QTE : MonoBehaviour
     private float vibrationLength;
     
     private bool hasPressedA;
+    public SO_Midlemen midlemen;
 
     private Sprite currentGeneratedInput;
     private Sprite X_Btn, Y_Btn, B_Btn, A_Btn;
@@ -234,7 +235,7 @@ public class QTE : MonoBehaviour
             increment = 0;
             hasSucceeded = false;
         }
-        Debug.Log("player index : " + indexPlayer + " has touched : "+ Hinput.gamepad[indexPlayer].X.justReleased);
+        //Debug.Log("player index : " + indexPlayer + " has touched : "+ Hinput.gamepad[indexPlayer].X.justReleased);
         if (hasSucceeded == false && QTEGenList.Count > 0)
         {
             switch (QTEGenList[increment])
@@ -327,6 +328,7 @@ public class QTE : MonoBehaviour
         switch (CorrectKey)
         {
             case 1 :
+                midlemen.shakeDuration = 0.1f;
                 QTEOrderList[increment].CrossFadeAlpha(0,0,false);
                 imagesBackground[increment].CrossFadeAlpha(0,0,false);
                 //QTEOrderList[increment].SetActive(false);
