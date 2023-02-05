@@ -45,6 +45,8 @@ public class QTE : MonoBehaviour
     private string gamepadName;
 
     public bool hasSucceeded;
+    
+    public GameObject audioManager; 
 
     // Start is called before the first frame update
     void Start()
@@ -308,17 +310,20 @@ public class QTE : MonoBehaviour
                 imagesBackground[increment].CrossFadeAlpha(0,0,false);
                 //QTEOrderList[increment].SetActive(false);
                 CorrectKey = 0;
-                // !!!!!! Son Click
+                // !!!!!! Son Click 
+                audioManager.GetComponent<AudioManager>().PlayClicSound();
                 increment += 1;
                 if (increment >= 4)
                 {
                     hasSucceeded = true;
-                    // !!!!!! Son item collect~~~~~~~~
+                    // !!!!!! Son Win QTE~~~~~~~~
+                    audioManager.GetComponent<AudioManager>().PlaySuccessSound();
                 }
                 break;
                 
             case 2 :
-                // !!!!!! Son erreur
+                // !!!!!! Son Loose QTE
+                audioManager.GetComponent<AudioManager>().PlayFailureSound();
                 CorrectKey = 0;
                 GenerateSequence();
                 increment = 0;

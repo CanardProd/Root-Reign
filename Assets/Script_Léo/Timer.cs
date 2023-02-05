@@ -6,7 +6,8 @@ public class Timer : MonoBehaviour
     public float timerDuration = 120f; // Durée du timer en secondes
     private float timerValue;
     public Text timerText;
-    public Animator animator; // Référence à l'Animator
+    public Animator animator;
+    public GameObject audioManager; 
     private bool timerIsRunning = true;
 
     private void Start()
@@ -33,9 +34,16 @@ public class Timer : MonoBehaviour
             {
                 timerIsRunning = false;
                 animator.SetBool("endChrono", true);
+                audioManager.GetComponent<AudioManager>().PlayAlarmSound();
+                Invoke("waitFirework", 2f);
                 // Déclenchez l'événement "game over" ici
             }
         }
+    }
+    private void waitFirework()
+    {
+        audioManager.GetComponent<AudioManager>().PlayVictorySound();
+        audioManager.GetComponent<AudioManager>().PlayFireworkSound();
     }
 }
 

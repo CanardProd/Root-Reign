@@ -2,47 +2,61 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public AudioSource audioSource;
-    public AudioSource backgroundMusic;
-    public AudioSource victorySound;
-    public AudioSource fireworkSound;
-    public AudioSource alarmSound;
-    public AudioSource successSound;
-    public AudioSource failureSound;
-    public AudioSource deathSound;
+    [Header("                                           ---Mettre l'Audio Ici---")]
+    public AudioClip backgroundMusic;
+    public AudioClip victorySound;
+    public AudioClip fireworkSound;
+    public AudioClip alarmSound;
+    public AudioClip successSound;
+    public AudioClip failureSound;
+    public AudioClip deathSound;
+    public AudioClip clicSound;
+
+    [Header("                                           ---Audio Listener---")]
+    public AudioSource audioSourceMusic;
+    public AudioSource audioSourceEffect;
+
+    [Header("                                           ---Volume Music & Volume---")]
+    public float musicVolume;
+    public float effectVolume;
+
 
     private void Start()
     {
-        backgroundMusic.Play();
+        audioSourceMusic.PlayOneShot(backgroundMusic, musicVolume);
     }
 
     public void PlayVictorySound()
     {
-        victorySound.Play();
+        audioSourceEffect.PlayOneShot(victorySound, effectVolume);
     }
 
     public void PlayFireworkSound()
     {
-        fireworkSound.Play();
+        audioSourceEffect.PlayOneShot(fireworkSound, effectVolume);
     }
 
     public void PlayAlarmSound()
     {
-        alarmSound.Play();
+        audioSourceEffect.PlayOneShot(alarmSound, effectVolume);
     }
 
     public void PlaySuccessSound()
     {
-        successSound.Play();
+        audioSourceEffect.PlayOneShot(successSound, effectVolume);
     }
 
     public void PlayFailureSound()
     {
-        failureSound.Play();
+        audioSourceEffect.PlayOneShot(failureSound, effectVolume);
     }
 
     public void PlayDeathSound()
     {
-        deathSound.Play();
+        audioSourceEffect.PlayOneShot(deathSound, effectVolume);
+    }
+    public void PlayClicSound()
+    {
+        audioSourceEffect.PlayOneShot(clicSound, effectVolume);
     }
 }
