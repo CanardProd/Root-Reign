@@ -123,7 +123,7 @@ public class QTE : MonoBehaviour
 
         
         
-        GetComponent<Renderer>().material = red;
+        //GetComponent<Renderer>().material = red;
 
         
         /////////////////////////////////////////////

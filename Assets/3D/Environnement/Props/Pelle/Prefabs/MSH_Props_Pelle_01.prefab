@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 611415008335380683}
   - component: {fileID: 4280986751957259414}
   - component: {fileID: 572034629781316698}
+  - component: {fileID: 3788165797849638695}
   m_Layer: 0
   m_Name: MSH_Props_Pelle_01
   m_TagString: Untagged
@@ -99,8 +100,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9edd4df383bfe345b018a4358cf7000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  QTEOrderList: []
+  imagesBackground: []
   indexPlayer: 0
   hasSucceeded: 0
+  audioManager: {fileID: 0}
 --- !u!143 &4280986751957259414
 CharacterController:
   m_ObjectHideFlags: 0
@@ -136,9 +140,24 @@ MonoBehaviour:
   delayNotCapture: 0.5
   delayCapture: 1
   midlemen: {fileID: 11400000, guid: 48095eed5e87f97468584ebfbaa13a33, type: 2}
-  fxCapturePlayer1: {fileID: 0}
-  fxCapturePlayer2: {fileID: 0}
+  fxCapturePlayer1: {fileID: 3754154707507589181, guid: bd3a6429240f651438a60c3498f95a3f,
+    type: 3}
+  fxCapturePlayer2: {fileID: 5275005889359787105, guid: 4b3b5db4ecc300c47a74a3c32a50df3e,
+    type: 3}
   tempObject: {fileID: 0}
+--- !u!135 &3788165797849638695
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411014538769743971}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6078165
+  m_Center: {x: 0.0000008852185, y: -1.0032177, z: -0.0000002439276}
 --- !u!1 &1525777950676544045
 GameObject:
   m_ObjectHideFlags: 0
