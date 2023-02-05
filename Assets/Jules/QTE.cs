@@ -120,7 +120,13 @@ public class QTE : MonoBehaviour
             QTEOrderList[i].sprite = GenerateInput();
         }
     }
-    
+
+    public void ResetFlag()
+    {
+        QTEGenList.Clear();
+        increment = 0;
+        hasSucceeded = false;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -131,7 +137,7 @@ public class QTE : MonoBehaviour
             hasSucceeded = false;
         }
         Debug.Log("player index : " + indexPlayer + " has touched : "+ Hinput.gamepad[indexPlayer].X.justReleased);
-        if (hasSucceeded == false && QTEGenList.Count > 0)
+        if (QTEGenList.Count > 0 && hasSucceeded == false)
         {
             switch (QTEGenList[increment])
             {
@@ -214,7 +220,7 @@ public class QTE : MonoBehaviour
         }
         else
         {
-            ///////////////
+            //transform.GetComponent<Flag>().AddScore(transform.GetComponent<Flag>().playerCapture);
         }
         
     }

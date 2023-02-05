@@ -50,25 +50,25 @@ MonoBehaviour:
   - position: {x: 0, y: 0, z: 0}
     direction: {x: 0, y: 0, z: 0.07044663}
     up: {x: 0, y: 1, z: 0}
-    scale: {x: 0.03792337, y: 0.03792337}
+    scale: {x: 0.6008891, y: 0.6008891}
     roll: 0
   - position: {x: 0, y: 0, z: 0.4696442}
     direction: {x: 0, y: 0, z: 0.5400908}
     up: {x: 0, y: 1, z: 0}
-    scale: {x: -0.46207663, y: -0.46207663}
+    scale: {x: 0.00088906294, y: 0.00088906294}
     roll: 0
   curves:
   - n1:
       position: {x: 0, y: 0, z: 0}
       direction: {x: 0, y: 0, z: 0.07044663}
       up: {x: 0, y: 1, z: 0}
-      scale: {x: 0.03792337, y: 0.03792337}
+      scale: {x: 0.6008891, y: 0.6008891}
       roll: 0
     n2:
       position: {x: 0, y: 0, z: 0.4696442}
       direction: {x: 0, y: 0, z: 0.5400908}
       up: {x: 0, y: 1, z: 0}
-      scale: {x: -0.46207663, y: -0.46207663}
+      scale: {x: 0.00088906294, y: 0.00088906294}
       roll: 0
     Changed:
       m_PersistentCalls:
@@ -93,9 +93,9 @@ MonoBehaviour:
   mesh: {fileID: 4300000, guid: 500594a39d643774c8e028335ee33da7, type: 3}
   material: {fileID: 2100000, guid: 5d32ac4b8dd925c418ba969e2594582b, type: 2}
   rotation: {x: 0, y: 90, z: 0}
-  scale: {x: 0.3, y: 0.3, z: 0.3}
-  startScale: 0.5
-  DurationInSecond: 30
+  scale: {x: 1, y: 1, z: 1}
+  startScale: 0.6
+  DurationInSecond: 20
 --- !u!1 &5614839115403588497
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,9 +201,9 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5614839115403588497}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}

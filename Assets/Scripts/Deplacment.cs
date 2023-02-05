@@ -64,7 +64,7 @@ public class Deplacment : MonoBehaviour
         
         GameObject obj = Instantiate(splinePrefab, startPos, Quaternion.identity);
         lastSpline = obj.GetComponent<Spline>();
-        
+        obj.transform.GetChild(0).tag = "Player" + idPlayer;
         rando = Random.insideUnitSphere * 0.5f;
         SplineNode node = new SplineNode(Vector3.zero, transform.position - arbre);
         
@@ -75,7 +75,7 @@ public class Deplacment : MonoBehaviour
 
     private void AddSplineNode()
     {
-        rando = Random.insideUnitSphere * 0.5f;
+        rando = Random.insideUnitSphere * 0.3f;
         SplineNode node = new SplineNode(transform.position- (arbre + rando), transform.position- (arbre + rando));
         lastSpline.AddNode(node);
     }
