@@ -1696,8 +1696,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9edd4df383bfe345b018a4358cf7000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  QTEOrderList: []
+  imagesBackground: []
   indexPlayer: 0
   hasSucceeded: 0
+  audioManager: {fileID: 0}
 --- !u!143 &3960353973784293811
 CharacterController:
   m_ObjectHideFlags: 0

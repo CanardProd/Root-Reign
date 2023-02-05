@@ -590,6 +590,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7010551207037504133}
+  - component: {fileID: 8926673120251375662}
+  - component: {fileID: 7614964976665121933}
+  - component: {fileID: 2301425898320576633}
   m_Layer: 0
   m_Name: brouette
   m_TagString: Untagged
@@ -604,7 +607,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7638575015643336767}
-  m_LocalRotation: {x: -0, y: -0, z: -0.029424418, w: 0.9995671}
+  m_LocalRotation: {x: 0, y: 0, z: -0.029422078, w: 0.9995671}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.32135883, y: 0.32135883, z: 0.32135883}
   m_ConstrainProportionsScale: 0
@@ -621,6 +624,61 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -3.372}
+--- !u!114 &8926673120251375662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7638575015643336767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9edd4df383bfe345b018a4358cf7000, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  QTEOrderList: []
+  imagesBackground: []
+  indexPlayer: 0
+  hasSucceeded: 0
+  audioManager: {fileID: 0}
+--- !u!143 &7614964976665121933
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7638575015643336767}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 1
+  m_Radius: 0
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2301425898320576633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7638575015643336767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cb3f638edf3c8549bdac04b0fa8b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCapture: {fileID: 0}
+  isCapture: 0
+  delayNotCapture: 0.5
+  delayCapture: 1
+  midlemen: {fileID: 11400000, guid: 48095eed5e87f97468584ebfbaa13a33, type: 2}
+  fxCapturePlayer1: {fileID: 0}
+  fxCapturePlayer2: {fileID: 0}
+  tempObject: {fileID: 0}
 --- !u!1 &9032200260046492532
 GameObject:
   m_ObjectHideFlags: 0
