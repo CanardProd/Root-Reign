@@ -31,9 +31,9 @@ public class QTE : MonoBehaviour
         BackThirdBtn1,
         BackFourthBtn1;
 
-    private List<Image> QTEOrderList;
+    public List<Image> QTEOrderList;
 
-    private List<Image> imagesBackground;
+    public List<Image> imagesBackground;
     //public GameObject DisplayBox;
     //public GameObject PassBox;
     public int indexPlayer;
@@ -45,6 +45,8 @@ public class QTE : MonoBehaviour
     private string gamepadName;
 
     public bool hasSucceeded;
+    
+    public GameObject audioManager; 
 
     // Start is called before the first frame update
     void Start()
@@ -76,24 +78,31 @@ public class QTE : MonoBehaviour
         FirstBtn = gameObject.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<Image>();
         BackFirstBtn = gameObject.transform.GetChild(0).GetChild(0).GetComponent<Image>();
         FirstBtn.CrossFadeAlpha(0,0, false);
+        
         SecondBtn = gameObject.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<Image>();
         BackSecondBtn = gameObject.transform.GetChild(0).GetChild(1).GetComponent<Image>();
         SecondBtn.CrossFadeAlpha(0,0, false);
+        
         ThirdBtn = gameObject.transform.GetChild(0).GetChild(2).GetChild(0).GetComponent<Image>();
         BackThirdBtn = gameObject.transform.GetChild(0).GetChild(2).GetComponent<Image>();
         ThirdBtn.CrossFadeAlpha(0, 0, false);
+        
         FourthBtn = gameObject.transform.GetChild(0).GetChild(3).GetChild(0).GetComponent<Image>();
         BackFourthBtn = gameObject.transform.GetChild(0).GetChild(3).GetComponent<Image>();
         FourthBtn.CrossFadeAlpha(0,0, false);
+        
         FirstBtn1 = gameObject.transform.GetChild(0).GetChild(4).GetChild(0).GetComponent<Image>();
         BackFirstBtn1 = gameObject.transform.GetChild(0).GetChild(4).GetComponent<Image>();
         FirstBtn1.CrossFadeAlpha(0,0, false);
+        
         SecondBtn1 = gameObject.transform.GetChild(0).GetChild(5).GetChild(0).GetComponent<Image>();
         BackSecondBtn1 = gameObject.transform.GetChild(0).GetChild(5).GetComponent<Image>();
         SecondBtn1.CrossFadeAlpha(0,0, false);
+        
         ThirdBtn1 = gameObject.transform.GetChild(0).GetChild(6).GetChild(0).GetComponent<Image>();
         BackThirdBtn1 = gameObject.transform.GetChild(0).GetChild(6).GetComponent<Image>();
         ThirdBtn1.CrossFadeAlpha(0,0, false);
+        
         FourthBtn1 = gameObject.transform.GetChild(0).GetChild(7).GetChild(0).GetComponent<Image>();
         BackFourthBtn1 = gameObject.transform.GetChild(0).GetChild(7).GetComponent<Image>();
         FourthBtn1.CrossFadeAlpha(0,0, false);
@@ -116,10 +125,15 @@ public class QTE : MonoBehaviour
         
         GetComponent<Renderer>().material = red;
 
-        CreateList(indexPlayer);
-        RecreateBackList(indexPlayer);
+        
         /////////////////////////////////////////////
         //GenerateSequence();
+    }
+
+    public void ListCreation()
+    {
+        CreateList(indexPlayer);
+        RecreateBackList(indexPlayer);
     }
     
     void CreateList(int index)
@@ -315,17 +329,20 @@ public class QTE : MonoBehaviour
                 imagesBackground[increment].CrossFadeAlpha(0,0,false);
                 //QTEOrderList[increment].SetActive(false);
                 CorrectKey = 0;
-                // !!!!!! Son Click
+                // !!!!!! Son Click 
+                audioManager.GetComponent<AudioManager>().PlayClicSound();
                 increment += 1;
                 if (increment >= 4)
                 {
                     hasSucceeded = true;
-                    // !!!!!! Son item collect~~~~~~~~
+                    // !!!!!! Son Win QTE~~~~~~~~
+                    audioManager.GetComponent<AudioManager>().PlaySuccessSound();
                 }
                 break;
                 
             case 2 :
-                // !!!!!! Son erreur
+                // !!!!!! Son Loose QTE
+                audioManager.GetComponent<AudioManager>().PlayFailureSound();
                 CorrectKey = 0;
                 GenerateSequence();
                 increment = 0;
