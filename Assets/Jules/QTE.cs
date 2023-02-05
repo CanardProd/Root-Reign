@@ -20,7 +20,8 @@ public class QTE : MonoBehaviour
 
     private Sprite currentGeneratedInput;
     private Sprite X_Btn, Y_Btn, B_Btn, A_Btn;
-    private Image FirstBtn, SecondBtn, ThirdBtn, FourthBtn;
+    public Image FirstBtn, SecondBtn, ThirdBtn, FourthBtn, FirstBtn1, SecondBtn1, ThirdBtn1, FourthBtn1;
+
     private List<Image> QTEOrderList;
     //public GameObject DisplayBox;
     //public GameObject PassBox;
@@ -61,23 +62,45 @@ public class QTE : MonoBehaviour
         A_Btn = Resources.Load("UI/A_Btn", typeof(Sprite)) as Sprite;
 
         FirstBtn = gameObject.transform.GetChild(0).GetChild(0).GetComponent<Image>();
+        FirstBtn.CrossFadeAlpha(0,0, false);
         SecondBtn = gameObject.transform.GetChild(0).GetChild(1).GetComponent<Image>();
+        SecondBtn.CrossFadeAlpha(0,0, false);
         ThirdBtn = gameObject.transform.GetChild(0).GetChild(2).GetComponent<Image>();
+        ThirdBtn.CrossFadeAlpha(0, 0, false);
         FourthBtn = gameObject.transform.GetChild(0).GetChild(3).GetComponent<Image>();
+        FourthBtn.CrossFadeAlpha(0,0, false);
+        FirstBtn1 = gameObject.transform.GetChild(0).GetChild(4).GetComponent<Image>();
+        FirstBtn1.CrossFadeAlpha(0,0, false);
+        SecondBtn1 = gameObject.transform.GetChild(0).GetChild(5).GetComponent<Image>();
+        SecondBtn1.CrossFadeAlpha(0,0, false);
+        ThirdBtn1 = gameObject.transform.GetChild(0).GetChild(6).GetComponent<Image>();
+        ThirdBtn1.CrossFadeAlpha(0,0, false);
+        FourthBtn1 = gameObject.transform.GetChild(0).GetChild(7).GetComponent<Image>();
+        FourthBtn1.CrossFadeAlpha(0,0, false);
         
         GetComponent<Renderer>().material = red;
 
-        CreateList();
+        CreateList(indexPlayer);
         /////////////////////////////////////////////
         //GenerateSequence();
     }
     
-    void CreateList()
+    void CreateList(int index)
     {
-        QTEOrderList.Add(FirstBtn);
-        QTEOrderList.Add(SecondBtn);
-        QTEOrderList.Add(ThirdBtn);
-        QTEOrderList.Add(FourthBtn);
+        if (index == 0)
+        {
+            QTEOrderList.Add(FirstBtn);
+            QTEOrderList.Add(SecondBtn);
+            QTEOrderList.Add(ThirdBtn);
+            QTEOrderList.Add(FourthBtn);
+        }
+        else if (index == 1)
+        {
+            QTEOrderList.Add(FirstBtn1);
+            QTEOrderList.Add(SecondBtn1);
+            QTEOrderList.Add(ThirdBtn1);
+            QTEOrderList.Add(FourthBtn1);
+        }
     }
     
     private Sprite GenerateInput()
@@ -117,6 +140,7 @@ public class QTE : MonoBehaviour
         for (int i = 0; i < 4; i++)
         {
             QTEOrderList[i].GameObject().SetActive(true);
+            QTEOrderList[i].CrossFadeAlpha(255, 0.1f, false);
             QTEOrderList[i].sprite = GenerateInput();
         }
     }
