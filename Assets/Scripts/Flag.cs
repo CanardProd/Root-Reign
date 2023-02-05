@@ -27,7 +27,7 @@ public class Flag : MonoBehaviour
         {
             if (playerCapture != other.GetComponent<Deplacment>())
             {
-                transform.GetComponent<QTE>().ListCreation();
+                transform.GetComponent<QTE>().ListCreation(other.GetComponent<Deplacment>().idPlayer);
                 other.GetComponent<Deplacment>().isCapturing = true;
                 transform.GetComponent<QTE>().indexPlayer = other.GetComponent<Deplacment>().indexPlayer;
                 transform.GetComponent<QTE>().GenerateSequence();

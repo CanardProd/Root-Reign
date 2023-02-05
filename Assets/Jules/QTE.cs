@@ -130,10 +130,12 @@ public class QTE : MonoBehaviour
         //GenerateSequence();
     }
 
-    public void ListCreation()
+    public void ListCreation(int index)
     {
-        CreateList(indexPlayer);
-        RecreateBackList(indexPlayer);
+        indexPlayer = index;
+        
+        CreateList(index);
+        RecreateBackList(index);
     }
     
     void CreateList(int index)
