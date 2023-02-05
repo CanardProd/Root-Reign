@@ -3,7 +3,14 @@ guid: 6cb3f638edf3c8549bdac04b0fa8b75a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerCapture: {instanceID: 0}
+  - midlemen: {instanceID: 0}
+  - fxCapturePlayer1: {fileID: 3754154707507589181, guid: bd3a6429240f651438a60c3498f95a3f,
+      type: 3}
+  - fxCapturePlayer2: {fileID: 5275005889359787105, guid: 4b3b5db4ecc300c47a74a3c32a50df3e,
+      type: 3}
+  - tempObject: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

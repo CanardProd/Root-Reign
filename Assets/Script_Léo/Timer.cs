@@ -40,6 +40,8 @@ public class Timer : MonoBehaviour
                 audioManager.GetComponent<AudioManager>().PlayAlarmSound();
                 Invoke("waitFirework", 2f);
                 // Déclenchez l'événement "game over" ici
+                
+                
             }
         }
     }
