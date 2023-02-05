@@ -34,14 +34,14 @@ Material:
     - _Float0: 0.01
     - _Float1: 1024
     - _VariationScale: 28.7
-    - _WindInfluceMASKY: 4.28
+    - _WindInfluceMASKY: 4.8
     - _WindScale: 1024
-    - _WindStrenght: 0.16
+    - _WindStrenght: 0.2
     - _windpower: 0.01
-    - _windspeeeeeed: 0
+    - _windspeeeeeed: 0.5
     m_Colors:
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Vector0: {r: 0.7, g: 0, b: 0, a: 0}
+    - _Vector0: {r: 1.29, g: -0.09, b: 0.44, a: 1.03}
     - _WindDirection: {r: 1.43, g: 0, b: 0, a: 0}
     - _WindSpeed: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
