@@ -9,8 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Leaf red
   m_Shader: {fileID: 4800000, guid: 946044b6244e55148874674698bf393f, type: 3}
-  m_ValidKeywords:
-  - _KEYWORD0_ON
+  m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -25,7 +24,7 @@ Material:
     m_Floats:
     - _AlphaCutoff: 0.5
     - _Float0: 4.3
-    - _Keyword0: 1
+    - _Keyword0: 0
     - _TessEdgeLength: 16
     - _TessMax: 25
     - _TessMaxDisp: 25
