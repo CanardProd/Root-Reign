@@ -52,7 +52,7 @@ public class Flag : MonoBehaviour
             }
             else
             {
-                other.GetComponent<Deplacment>().isCapturing = true;
+                //other.GetComponent<Deplacment>().isCapturing = true;
             }
         }
     }

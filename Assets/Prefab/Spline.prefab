@@ -50,25 +50,25 @@ MonoBehaviour:
   - position: {x: 0, y: 0, z: 0}
     direction: {x: 0, y: 0, z: 0.07044663}
     up: {x: 0, y: 1, z: 0}
-    scale: {x: 0.49494192, y: 0.49494192}
+    scale: {x: 0.64815855, y: 0.64815855}
     roll: 0
   - position: {x: 0, y: 0, z: 0.4696442}
     direction: {x: 0, y: 0, z: 0.5400908}
     up: {x: 0, y: 1, z: 0}
-    scale: {x: -0.10505809, y: -0.10505809}
+    scale: {x: 0.04815853, y: 0.04815853}
     roll: 0
   curves:
   - n1:
       position: {x: 0, y: 0, z: 0}
       direction: {x: 0, y: 0, z: 0.07044663}
       up: {x: 0, y: 1, z: 0}
-      scale: {x: 0.49494192, y: 0.49494192}
+      scale: {x: 0.64815855, y: 0.64815855}
       roll: 0
     n2:
       position: {x: 0, y: 0, z: 0.4696442}
       direction: {x: 0, y: 0, z: 0.5400908}
       up: {x: 0, y: 1, z: 0}
-      scale: {x: -0.10505809, y: -0.10505809}
+      scale: {x: 0.04815853, y: 0.04815853}
       roll: 0
     Changed:
       m_PersistentCalls:
@@ -95,7 +95,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 90, z: 0}
   scale: {x: 1, y: 1, z: 1}
   startScale: 0.6
-  DurationInSecond: 1
+  DurationInSecond: 0.5
 --- !u!1 &5614839115403588497
 GameObject:
   m_ObjectHideFlags: 0

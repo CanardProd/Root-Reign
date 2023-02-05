@@ -91,7 +91,7 @@ public class Deplacment : MonoBehaviour
         }
         if(delay <= 0)
         {
-            tempMaxDelay = 10f;
+            tempMaxDelay = maxDelay;
             delay = tempMaxDelay;
             InstantiateColliderPoint();
             if (rb.velocity.magnitude > 0.1f && !isCapturing)
@@ -120,14 +120,14 @@ public class Deplacment : MonoBehaviour
     
     void Deplacement()
     {
-        if (!isCapturing || !midlemen.isPaused)
+        if (!isCapturing && !midlemen.isPaused)
         {
             rb.velocity = direction.right * speed;
         }
         else
         {
             Debug.Log("IS CAPTURING");
-            speed = 0;
+            rb.velocity = Vector3.zero;
         }
     }
 

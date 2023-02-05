@@ -201,6 +201,13 @@ public class QTE : MonoBehaviour
             QTEOrderList[i].sprite = GenerateInput();
         }
     }
+
+    public void ResetFlag()
+    {
+        QTEGenList.Clear();
+        increment = 0;
+        hasSucceeded = false;
+    }
     
     // Update is called once per frame
     void Update()
