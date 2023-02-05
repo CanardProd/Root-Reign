@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Jules/Scene_Test_QTE.unity.meta
 guid: e17d1c09fe5f27e4abd168387331fdb6
+========
+guid: 84a1e7aa11704e64faf8b84c0d71be25
+folderAsset: yes
+>>>>>>>> origin/Laura:Assets/3D/Environnement/Décors/Montagnes.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
