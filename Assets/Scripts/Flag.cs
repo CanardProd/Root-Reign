@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Flag : MonoBehaviour
@@ -22,10 +23,11 @@ public class Flag : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Set player isCapturing to true
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !isCapture)
         {
             if (playerCapture != other.GetComponent<Deplacment>())
             {
+                transform.GetComponent<QTE>().ListCreation();
                 other.GetComponent<Deplacment>().isCapturing = true;
                 transform.GetComponent<QTE>().indexPlayer = other.GetComponent<Deplacment>().indexPlayer;
                 transform.GetComponent<QTE>().GenerateSequence();
@@ -37,10 +39,21 @@ public class Flag : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (playerCapture != other.GetComponent<Deplacment>())
+            Debug.Log("Player is in trigger");
+            if (transform.GetComponent<QTE>().hasSucceeded)
             {
-                playerCapture = other.GetComponent<Deplacment>();
-                AddScore(playerCapture);
+                if(playerCapture != other.GetComponent<Deplacment>())
+                {
+                    other.GetComponent<Deplacment>().isCapturing = false;
+                    Debug.Log("Player is capturing");
+                    playerCapture = other.GetComponent<Deplacment>();
+                    AddScore(playerCapture);
+                    transform.GetComponent<QTE>().ResetFlag();
+                }
+            }
+            else
+            {
+                //other.GetComponent<Deplacment>().isCapturing = true;
             }
         }
     }
@@ -58,7 +71,7 @@ public class Flag : MonoBehaviour
         }
     }
     
-    void AddScore(Deplacment player)
+    public void AddScore(Deplacment player)
     {
         if (transform.GetComponent<QTE>().hasSucceeded)
         {

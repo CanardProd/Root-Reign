@@ -50,25 +50,25 @@ MonoBehaviour:
   - position: {x: 0, y: 0, z: 0}
     direction: {x: 0, y: 0, z: 0.07044663}
     up: {x: 0, y: 1, z: 0}
-    scale: {x: 0.03792337, y: 0.03792337}
+    scale: {x: 0.64815855, y: 0.64815855}
     roll: 0
   - position: {x: 0, y: 0, z: 0.4696442}
     direction: {x: 0, y: 0, z: 0.5400908}
     up: {x: 0, y: 1, z: 0}
-    scale: {x: -0.46207663, y: -0.46207663}
+    scale: {x: 0.04815853, y: 0.04815853}
     roll: 0
   curves:
   - n1:
       position: {x: 0, y: 0, z: 0}
       direction: {x: 0, y: 0, z: 0.07044663}
       up: {x: 0, y: 1, z: 0}
-      scale: {x: 0.03792337, y: 0.03792337}
+      scale: {x: 0.64815855, y: 0.64815855}
       roll: 0
     n2:
       position: {x: 0, y: 0, z: 0.4696442}
       direction: {x: 0, y: 0, z: 0.5400908}
       up: {x: 0, y: 1, z: 0}
-      scale: {x: -0.46207663, y: -0.46207663}
+      scale: {x: 0.04815853, y: 0.04815853}
       roll: 0
     Changed:
       m_PersistentCalls:
@@ -93,9 +93,9 @@ MonoBehaviour:
   mesh: {fileID: 4300000, guid: 500594a39d643774c8e028335ee33da7, type: 3}
   material: {fileID: 2100000, guid: 5d32ac4b8dd925c418ba969e2594582b, type: 2}
   rotation: {x: 0, y: 90, z: 0}
-  scale: {x: 0.3, y: 0.3, z: 0.3}
-  startScale: 0.5
-  DurationInSecond: 30
+  scale: {x: 1, y: 1, z: 1}
+  startScale: 0.6
+  DurationInSecond: 0.5
 --- !u!1 &5614839115403588497
 GameObject:
   m_ObjectHideFlags: 0
