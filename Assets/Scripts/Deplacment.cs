@@ -66,11 +66,24 @@ public class Deplacment : MonoBehaviour
         lastSpline = obj.GetComponent<Spline>();
         obj.transform.GetChild(0).tag = "Player" + idPlayer;
         rando = Random.insideUnitSphere * 0.5f;
+        rando.y = -1;
         SplineNode node = new SplineNode(Vector3.zero, transform.position - arbre);
-        
+        rando.y = 0;
         SplineNode node1 = new SplineNode(transform.position- (arbre + rando), transform.position- (arbre + rando));
         lastSpline.nodes[0] = node;
         lastSpline.nodes[1] = node1;
+        
+        if (idPlayer == 1)
+        {
+            obj.transform.GetChild(0).GetComponent<MeshRenderer>().material = midlemen.Player1;
+            
+        }
+        else if (idPlayer == 2)
+        {
+            obj.transform.GetChild(0).GetComponent<MeshRenderer>().material = midlemen.Player2;
+        }
+        
+        
     }
 
     private void AddSplineNode()
