@@ -7,10 +7,12 @@ public class Timer : MonoBehaviour
     private float timerValue;
     public Text timerText;
     public Animator animator;
+    public Animator animatorIntro;
     public GameObject audioManager; 
     private bool timerIsRunning = true;
     
     public SO_Midlemen midlemen;
+    private static readonly int VictoryBlue = Animator.StringToHash("Victory_Blue");
 
     private void Start()
     {
@@ -38,9 +40,23 @@ public class Timer : MonoBehaviour
                 timerIsRunning = false;
                 animator.SetBool("endChrono", true);
                 audioManager.GetComponent<AudioManager>().PlayAlarmSound();
+                Debug.Log("fin timer");
+
+                if (midlemen.scorePlayer1 > midlemen.scorePlayer2) // Si le joueur RED Gagne
+                {
+                    animatorIntro.SetBool("VictoryRed", true);
+                    Debug.Log("Red Victory");
+
+                }
+                else // si le joueur Bleu gagne
+                {
+                    animatorIntro.SetBool("VictoryBlue", true);
+                    Debug.Log("Blue Victory");
+
+                }
                 Invoke("waitFirework", 2f);
                 // Déclenchez l'événement "game over" ici
-                
+
                 
             }
         }
