@@ -31,6 +31,14 @@ public class Flag : MonoBehaviour
                 transform.GetComponent<QTE>().indexPlayer = other.GetComponent<Deplacment>().indexPlayer;
                 transform.GetComponent<QTE>().GenerateSequence();
             }
+        }else if (other.CompareTag("Player") && isCapture)
+        {
+            if (playerCapture != other.GetComponent<Deplacment>())
+            {
+                other.GetComponent<Deplacment>().isCapturing = true;
+                transform.GetComponent<QTE>().indexPlayer = other.GetComponent<Deplacment>().indexPlayer;
+                transform.GetComponent<QTE>().GenerateSequence();
+            }
         }
     }
 
@@ -38,7 +46,6 @@ public class Flag : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player is in trigger");
             if (transform.GetComponent<QTE>().hasSucceeded)
             {
                 if(playerCapture != other.GetComponent<Deplacment>())
