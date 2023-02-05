@@ -61,7 +61,7 @@ public class Flag : MonoBehaviour
                 if(playerCapture != other.GetComponent<Deplacment>())
                 {
                     other.GetComponent<Deplacment>().isCapturing = false;
-                    Debug.Log("Player is capturing");
+                    //Debug.Log("Player is capturing");
                     playerCapture = other.GetComponent<Deplacment>();
                     AddScore(playerCapture);
                     transform.GetComponent<QTE>().ResetFlag();
@@ -91,7 +91,7 @@ public class Flag : MonoBehaviour
     {
         if (transform.GetComponent<QTE>().hasSucceeded)
         {
-            Debug.Log("Capture");
+            //Debug.Log("Capture");
             //add score to player 1
             midlemen.AddScore(player.idPlayer);
             midlemen.shakeDuration = 0.5f;
