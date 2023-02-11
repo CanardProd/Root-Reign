@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Plugins/Particle VFX/Scenes/VFX_Butterflies_demo.unity.meta
 guid: 738e9e8629739314ea46fc5b86963737
+========
+guid: 86f0904f936a86641afe5d733dff37b0
+folderAsset: yes
+>>>>>>>> origin/Laura:Assets/Scenes/BordelDeLouis.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

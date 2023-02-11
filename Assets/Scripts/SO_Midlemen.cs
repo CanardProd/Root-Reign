@@ -12,6 +12,7 @@ public class SO_Midlemen : ScriptableObject
     public float scorePlayer1;
     public float scorePlayer2;
 
+    public float shakeDuration;
     public bool isPaused = false;
     public float timer;
     

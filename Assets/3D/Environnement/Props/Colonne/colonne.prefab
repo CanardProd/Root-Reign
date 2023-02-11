@@ -1696,6 +1696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9edd4df383bfe345b018a4358cf7000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  midlemen: {fileID: 11400000, guid: 48095eed5e87f97468584ebfbaa13a33, type: 2}
   QTEOrderList: []
   imagesBackground: []
   indexPlayer: 0
@@ -1736,8 +1737,11 @@ MonoBehaviour:
   delayNotCapture: 0.5
   delayCapture: 1
   midlemen: {fileID: 11400000, guid: 48095eed5e87f97468584ebfbaa13a33, type: 2}
-  fxCapturePlayer1: {fileID: 0}
-  fxCapturePlayer2: {fileID: 0}
+  fxCapturePlayer1: {fileID: 3754154707507589181, guid: bd3a6429240f651438a60c3498f95a3f,
+    type: 3}
+  fxCapturePlayer2: {fileID: 5275005889359787105, guid: 4b3b5db4ecc300c47a74a3c32a50df3e,
+    type: 3}
+  fxSmoke: {fileID: 5892227115705879751, guid: 1df7af08c64605b4eabc73eadb0f0774, type: 3}
   tempObject: {fileID: 0}
 --- !u!1 &6777278757578710487
 GameObject:

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class Flag : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class Flag : MonoBehaviour
 
     public GameObject fxCapturePlayer1;
     public GameObject fxCapturePlayer2;
+    public GameObject fxSmoke;
     
     public GameObject tempObject;
 
@@ -32,6 +34,7 @@ public class Flag : MonoBehaviour
         {
             if (playerCapture != other.GetComponent<Deplacment>())
             {
+                tempObject = Instantiate(fxSmoke, transform.position, Quaternion.identity);
                 transform.GetComponent<QTE>().ListCreation(other.GetComponent<Deplacment>().idPlayer-1);
                 other.GetComponent<Deplacment>().isCapturing = true;
                 transform.GetComponent<QTE>().indexPlayer = other.GetComponent<Deplacment>().indexPlayer;
@@ -41,6 +44,7 @@ public class Flag : MonoBehaviour
         {
             if (playerCapture != other.GetComponent<Deplacment>())
             {
+                tempObject = Instantiate(fxSmoke, transform.position, Quaternion.identity);
                 other.GetComponent<Deplacment>().isCapturing = true;
                 transform.GetComponent<QTE>().indexPlayer = other.GetComponent<Deplacment>().indexPlayer;
                 transform.GetComponent<QTE>().GenerateSequence();
@@ -57,7 +61,7 @@ public class Flag : MonoBehaviour
                 if(playerCapture != other.GetComponent<Deplacment>())
                 {
                     other.GetComponent<Deplacment>().isCapturing = false;
-                    Debug.Log("Player is capturing");
+                    //Debug.Log("Player is capturing");
                     playerCapture = other.GetComponent<Deplacment>();
                     AddScore(playerCapture);
                     transform.GetComponent<QTE>().ResetFlag();
@@ -87,9 +91,10 @@ public class Flag : MonoBehaviour
     {
         if (transform.GetComponent<QTE>().hasSucceeded)
         {
-            Debug.Log("Capture");
+            //Debug.Log("Capture");
             //add score to player 1
             midlemen.AddScore(player.idPlayer);
+            midlemen.shakeDuration = 0.5f;
         
             //Set isCapture to true
             isCapture = true;

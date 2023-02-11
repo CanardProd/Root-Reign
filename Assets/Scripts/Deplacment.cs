@@ -139,7 +139,7 @@ public class Deplacment : MonoBehaviour
         }
         else
         {
-            Debug.Log("IS CAPTURING");
+            //Debug.Log("IS CAPTURING");
             rb.velocity = Vector3.zero;
         }
     }

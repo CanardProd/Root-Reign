@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf.meta
 guid: 1b8d251f9af63b746bf2f7ffe00ebb9b
+========
+guid: 83150a2e2262a1041abefb8b92482002
+folderAsset: yes
+>>>>>>>> origin/Laura:Assets/3D/Environnement/PrefabPropsEnracines.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
